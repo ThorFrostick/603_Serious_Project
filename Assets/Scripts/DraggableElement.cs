@@ -9,7 +9,7 @@ public class DraggableElement : MonoBehaviour, IDragHandler
     private Canvas canvas;
 
     //Additionally, we want a reference to our position on the screen.
-    public static RectTransform pos;
+    public RectTransform pos;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
