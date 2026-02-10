@@ -5,7 +5,7 @@ public class TitleControls : MonoBehaviour
 {
     public void OnStartClick() 
     {
-        SceneManager.LoadScene("UITesting");
+        SceneManager.LoadScene("AppDec");
     }
 
     public void OnQuitClick() 
