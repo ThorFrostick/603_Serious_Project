@@ -1295,6 +1295,7 @@ MonoBehaviour:
   - {fileID: 1523819751}
   - {fileID: 299296748}
   - {fileID: 2008096714}
+  - {fileID: 1441195909}
   line: {fileID: 1150090163}
   characterObj: {fileID: 1959715381241716923, guid: 41bc5f1d9fa2c3049b789557a294999c, type: 3}
 --- !u!114 &1223616500
