@@ -13,4 +13,9 @@ public class TitleControls : MonoBehaviour
         Application.Quit();
     }
 
+    public void OnReturnClick() 
+    {
+        SceneManager.LoadScene("TitleScreen");
+    }
+
 }
