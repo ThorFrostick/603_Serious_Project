@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
@@ -9,6 +10,9 @@ public class UIControl : MonoBehaviour
     public RectTransform  docBehind;
     public RectTransform  docFront;
     public Transform table;
+    public List<CharacterControl> cc;
+    public Transform line;
+    public GameObject characterObj;
 
     private RectTransform _doc;
     private RectTransform _docB;
@@ -48,12 +52,34 @@ public class UIControl : MonoBehaviour
     {
         RectTransform d = Swap();
         MoveOutTop(d, 1f, true);
+        foreach (var c in cc)
+        {
+            c.MoveForward();
+        }
+        cc.RemoveAt(0);
+        var newChar = Instantiate(characterObj, line);
+        var newRect = newChar.GetComponent<RectTransform>();
+        newRect.anchoredPosition = new Vector2(-1500, 0);
+        var newCC = newChar.GetComponent<CharacterControl>();
+        newCC.SetData();
+        cc.Add(newCC);
     }
 
     public void OnBtnDecline()
     {
         RectTransform d = Swap();
         MoveOutTop(d, 1f, false);
+        foreach (var c in cc)
+        {
+            c.MoveForward();
+        }
+        cc.RemoveAt(0);
+        var newChar = Instantiate(characterObj, line);
+        var newRect = newChar.GetComponent<RectTransform>();
+        newRect.anchoredPosition = new Vector2(-1500, 0);
+        var newCC = newChar.GetComponent<CharacterControl>();
+        newCC.SetData();
+        cc.Add(newCC);
     }
 
     public void OnTitleClick() 
