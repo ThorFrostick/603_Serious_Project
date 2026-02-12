@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class NationalResources : MonoBehaviour
 {
-    //The amounts of Oil, Food, and Capital this nation possesses
+    //The amounts of Oil, Land, and Capital this nation possesses
     [SerializeField]
-    private float oil, food, currency;
+    private float oil, land, currency;
 
     public float Oil
     {
@@ -14,11 +14,11 @@ public class NationalResources : MonoBehaviour
         }
     }
 
-    public float Food
+    public float Land
     {
         get
         {
-            return food;
+            return land;
         }
     }
 
@@ -35,13 +35,13 @@ public class NationalResources : MonoBehaviour
     /// Parameters must be negative to decrement the amount.
     /// </summary>
     /// <param name="deltaOil">Change in this nation's Oil</param>
-    /// <param name="deltaFood">Change in this nation's Food</param>
+    /// <param name="deltaLand">Change in this nation's Land</param>
     /// <param name="deltaCurrency">Change in this nation's Capital</param>
-    public void UpdateResources(float deltaOil, float deltaFood, float deltaCurrency)
+    public void UpdateResources(float deltaOil, float deltaLand, float deltaCurrency)
     {
         //Add the change to all the resources.
         oil += deltaOil;
-        food += deltaFood;
+        land += deltaLand;
         currency += deltaCurrency;
     }
 }
