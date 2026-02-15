@@ -10,10 +10,7 @@ public class ResourceUpdateManager : MonoBehaviour
 
     public void Start()
     {
-        foreach (Image i in resourceBars) 
-        {
-            i.fillAmount = Random.Range(0.25f, 1f);
-        }
+        Reset();
     }
 
     public void UpdateResource(int resource, float amount) 
@@ -21,12 +18,12 @@ public class ResourceUpdateManager : MonoBehaviour
         resourceBars[resource].fillAmount += amount;
     }
 
-    public void Update() 
+    public void Reset()
     {
-        if (Input.GetKeyDown(KeyCode.E)) 
+        foreach (Image i in resourceBars)
         {
-            UpdateResource(Random.Range(0, 5), Random.Range(-0.5f, 0.5f));
+            //i.fillAmount = Random.Range(0.25f, 1f);
+            i.fillAmount = 1;
         }
     }
-
 }
