@@ -44,15 +44,14 @@ public class CheckPolicyCollision : MonoBehaviour
             //Check if our own position and the Approved zone are colliding.
             if(ZoneCollision.IsOverlapping(pos, approvedZone))
             {
-                //Debug.Log("Approved");
                 //DraggableElement.pos.anchoredPosition = Vector3.zero;
                 canvas.GetComponent<UIControl>().OnBtnApprove();
+                gameObject.GetComponent<ExchangeResources>().Exchange();
             }
 
             //Check if this UI element is overlapping with the Rejected zone.
             if(ZoneCollision.IsOverlapping(pos, rejectedZone))
             {
-                //Debug.Log("Rejected");
                 //DraggableElement.pos.anchoredPosition = Vector3.zero;
                 canvas.GetComponent<UIControl>().OnBtnDecline();
             }
