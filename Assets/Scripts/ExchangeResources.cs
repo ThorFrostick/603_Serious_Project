@@ -35,20 +35,21 @@ public class ExchangeResources : MonoBehaviour
 
         //Get the resource manager for the two nations' resources.
         resources = GameObject.FindFirstObjectByType<ResourceUpdateManager>();
+        resources.Reset();
 
         //The resourceBars list is all of our resources for each nation.
         // 0 = Nation A Oil
-        resources.UpdateResource(0, 0 - nationA.GetComponent<NationalResources>().Oil);
+        resources.UpdateResource(0, -1 + nationA.GetComponent<NationalResources>().Oil);
         // 1 = Nation A Land
-        resources.UpdateResource(1, 0 - nationA.GetComponent<NationalResources>().Land);
+        resources.UpdateResource(1, -1 + nationA.GetComponent<NationalResources>().Land);
         // 2 = Nation A Currency
-        resources.UpdateResource(2, 0 - nationA.GetComponent<NationalResources>().Currency);
+        resources.UpdateResource(2, -1 + nationA.GetComponent<NationalResources>().Currency);
         // 3 = Nation B Oil
-        resources.UpdateResource(3, 0 - nationB.GetComponent<NationalResources>().Oil);
+        resources.UpdateResource(3, -1 + nationB.GetComponent<NationalResources>().Oil);
         // 4 = Nation B Land
-        resources.UpdateResource(4, 0 - nationB.GetComponent <NationalResources>().Land);
+        resources.UpdateResource(4, -1 + nationB.GetComponent <NationalResources>().Land);
         // 5 = Nation B Currency
-        resources.UpdateResource(5, 0 - nationB.GetComponent<NationalResources>().Currency);
+        resources.UpdateResource(5, -1 + nationB.GetComponent<NationalResources>().Currency);
 
         //Display the information we have determined about this policy on screen
         Display();
@@ -86,17 +87,32 @@ public class ExchangeResources : MonoBehaviour
             deltaCurrency = -deltaCurrency;
         }
 
+        //Reset the bars on screen to accurately showcase the following changes.
+        resources.Reset();
+
         //Update Nation A's resources using the new base values for the change.
         nationA.GetComponent<NationalResources>().UpdateResources(deltaOil, deltaLand, deltaCurrency);
         Debug.Log($"Nation A => Oil: {nationA.GetComponent<NationalResources>().Oil}, Land: {nationA.GetComponent<NationalResources>().Land}, Capital: {nationA.GetComponent<NationalResources>().Currency}");
-        
+        //// 0 = Nation A Oil
+        //resources.UpdateResource(0, -1 + nationA.GetComponent<NationalResources>().Oil);
+        //// 1 = Nation A Land
+        //resources.UpdateResource(1, -1 + nationA.GetComponent<NationalResources>().Land);
+        //// 2 = Nation A Currency
+        //resources.UpdateResource(2, -1 + nationA.GetComponent<NationalResources>().Currency);
+
         //Then, update Nation B's resources with the inverse of Nation A's change in resources.
         nationB.GetComponent<NationalResources>().UpdateResources(-deltaOil, -deltaLand, -deltaCurrency);
         Debug.Log($"Nation B => Oil: {nationB.GetComponent<NationalResources>().Oil}, Land: {nationB.GetComponent<NationalResources>().Land}, Capital: {nationB.GetComponent<NationalResources>().Currency}");
+        //// 3 = Nation B Oil
+        //resources.UpdateResource(3, -1 + nationB.GetComponent<NationalResources>().Oil);
+        //// 4 = Nation B Land
+        //resources.UpdateResource(4, -1 + nationB.GetComponent<NationalResources>().Land);
+        //// 5 = Nation B Currency
+        //resources.UpdateResource(5, -1 + nationB.GetComponent<NationalResources>().Currency);
     }
 
     /// <summary>
-    /// Display the information of the policy on screen, including who exchanegs what.
+    /// Display the information of the policy on screen, including who exchanges what.
     /// </summary>
     private void Display()
     {
