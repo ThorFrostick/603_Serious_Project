@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 224482118}
   - component: {fileID: 224482121}
   - component: {fileID: 224482120}
+  - component: {fileID: 224482122}
   m_Layer: 5
   m_Name: Doc_F
   m_TagString: Untagged
@@ -225,6 +226,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1223616502}
   pos: {fileID: 0}
+--- !u!114 &224482122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224482116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7ed8deee300c346b4b666e1bc5c847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  docTextMesh: {fileID: 1619003768}
 --- !u!1 &238369366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,6 +1138,7 @@ GameObject:
   - component: {fileID: 1127220591}
   - component: {fileID: 1127220594}
   - component: {fileID: 1127220593}
+  - component: {fileID: 1127220595}
   m_Layer: 5
   m_Name: Doc_B
   m_TagString: Untagged
@@ -1217,6 +1232,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1223616502}
   pos: {fileID: 0}
+--- !u!114 &1127220595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127220589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7ed8deee300c346b4b666e1bc5c847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  docTextMesh: {fileID: 715206454}
 --- !u!1 &1150090162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,6 +1326,67 @@ MonoBehaviour:
   - {fileID: 1441195909}
   line: {fileID: 1150090163}
   characterObj: {fileID: 1959715381241716923, guid: 41bc5f1d9fa2c3049b789557a294999c, type: 3}
+  DocPresets:
+  - DocText: A starving nation has nothing to lose. We ask for your aid not as beggars,
+      but as neighbors who share a delicate peace. Do not force us to choose between
+      our survival and your security.
+    Nation: 0
+    ApproveEffectA:
+      Money: 0
+      Oil: 0
+      Land: 0
+    DeclineEffectA:
+      Money: 0
+      Oil: 0
+      Land: 0
+    ApproveEffectB:
+      Money: 0
+      Oil: 0
+      Land: 0
+    DeclineEffectB:
+      Money: 0
+      Oil: 0
+      Land: 0
+  - DocText: 'Our fields have withered, yet our oil reserves remain vast. We propose
+      a fair exchange: your surplus grain for our black gold. Let us ensure neither
+      of our nations suffers in vain.'
+    Nation: 1
+    ApproveEffectA:
+      Money: 0
+      Oil: 0
+      Land: 0
+    DeclineEffectA:
+      Money: 0
+      Oil: 0
+      Land: 0
+    ApproveEffectB:
+      Money: 0
+      Oil: 0
+      Land: 0
+    DeclineEffectB:
+      Money: 0
+      Oil: 0
+      Land: 0
+  - DocText: The Star-Gazer has arrived. For the prosperity of the state and the
+      peace of the people, he is now under the joint employ of our two crowns. May
+      his visions bring us light.
+    Nation: 2
+    ApproveEffectA:
+      Money: 0
+      Oil: 0
+      Land: 0
+    DeclineEffectA:
+      Money: 0
+      Oil: 0
+      Land: 0
+    ApproveEffectB:
+      Money: 0
+      Oil: 0
+      Land: 0
+    DeclineEffectB:
+      Money: 0
+      Oil: 0
+      Land: 0
 --- !u!114 &1223616500
 MonoBehaviour:
   m_ObjectHideFlags: 0
