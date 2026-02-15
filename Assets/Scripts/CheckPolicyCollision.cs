@@ -46,7 +46,7 @@ public class CheckPolicyCollision : MonoBehaviour
             {
                 //DraggableElement.pos.anchoredPosition = Vector3.zero;
                 canvas.GetComponent<UIControl>().OnBtnApprove();
-                gameObject.GetComponent<ExchangeResources>().Exchange();
+                // gameObject.GetComponent<ExchangeResources>().Exchange();
             }
 
             //Check if this UI element is overlapping with the Rejected zone.

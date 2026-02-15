@@ -240,6 +240,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   docTextMesh: {fileID: 1619003768}
+  DocData:
+    DocText: 
+    Nation: 0
+    ApproveEffectA:
+      Money: 0
+      Oil: 0
+      Land: 0
+    DeclineEffectA:
+      Money: 0
+      Oil: 0
+      Land: 0
+    ApproveEffectB:
+      Money: 0
+      Oil: 0
+      Land: 0
+    DeclineEffectB:
+      Money: 0
+      Oil: 0
+      Land: 0
 --- !u!114 &224482123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +266,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224482116}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dec0fcdc2c4ae144a8c3181a8bb4ebdf, type: 3}
   m_Name: 
@@ -288,7 +307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -861, y: 0}
+  m_AnchoredPosition: {x: -650, y: 0}
   m_SizeDelta: {x: 260, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &238369368
@@ -513,7 +532,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -302.99976, y: 1013.00006}
+  m_AnchoredPosition: {x: -231.99976, y: 400}
   m_SizeDelta: {x: 80, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &299996049
@@ -1123,7 +1142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -186.99994, y: 1011.00006}
+  m_AnchoredPosition: {x: -116, y: 400}
   m_SizeDelta: {x: 80, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &672070994
@@ -1412,7 +1431,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -422.99988, y: 1013.00006}
+  m_AnchoredPosition: {x: -352, y: 400}
   m_SizeDelta: {x: 80, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &829093558
@@ -1881,6 +1900,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   docTextMesh: {fileID: 715206454}
+  DocData:
+    DocText: 
+    Nation: 0
+    ApproveEffectA:
+      Money: 0
+      Oil: 0
+      Land: 0
+    DeclineEffectA:
+      Money: 0
+      Oil: 0
+      Land: 0
+    ApproveEffectB:
+      Money: 0
+      Oil: 0
+      Land: 0
+    DeclineEffectB:
+      Money: 0
+      Oil: 0
+      Land: 0
 --- !u!114 &1127220596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1888,7 +1926,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127220589}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dec0fcdc2c4ae144a8c3181a8bb4ebdf, type: 3}
   m_Name: 
@@ -1928,7 +1966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 65.999954, y: 1028}
+  m_AnchoredPosition: {x: 137, y: 400}
   m_SizeDelta: {x: 80, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1136754967
@@ -2050,22 +2088,28 @@ MonoBehaviour:
   - {fileID: 1441195909}
   line: {fileID: 1150090163}
   characterObj: {fileID: 1959715381241716923, guid: 41bc5f1d9fa2c3049b789557a294999c, type: 3}
+  OilAImg: {fileID: 477760441}
+  LandAImg: {fileID: 1008649299}
+  MoneyAImg: {fileID: 382522722}
+  OilBImg: {fileID: 747271491}
+  LandBImg: {fileID: 1730962847}
+  MoneyBImg: {fileID: 1569588842}
   DocPresets:
   - DocText: A starving nation has nothing to lose. We ask for your aid not as beggars,
       but as neighbors who share a delicate peace. Do not force us to choose between
       our survival and your security.
     Nation: 0
     ApproveEffectA:
-      Money: 0
-      Oil: 0
+      Money: 30
+      Oil: -30
       Land: 0
     DeclineEffectA:
       Money: 0
       Oil: 0
       Land: 0
     ApproveEffectB:
-      Money: 0
-      Oil: 0
+      Money: -30
+      Oil: 30
       Land: 0
     DeclineEffectB:
       Money: 0
@@ -2080,11 +2124,11 @@ MonoBehaviour:
       Oil: 0
       Land: 0
     DeclineEffectA:
-      Money: 0
+      Money: 50
       Oil: 0
       Land: 0
     ApproveEffectB:
-      Money: 0
+      Money: 10
       Oil: 0
       Land: 0
     DeclineEffectB:
@@ -2098,7 +2142,7 @@ MonoBehaviour:
     ApproveEffectA:
       Money: 0
       Oil: 0
-      Land: 0
+      Land: 15
     DeclineEffectA:
       Money: 0
       Oil: 0
@@ -2106,7 +2150,7 @@ MonoBehaviour:
     ApproveEffectB:
       Money: 0
       Oil: 0
-      Land: 0
+      Land: -20
     DeclineEffectB:
       Money: 0
       Oil: 0
@@ -2237,7 +2281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 807, y: 0}
+  m_AnchoredPosition: {x: 650, y: 0}
   m_SizeDelta: {x: 260, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1409919584
@@ -2462,7 +2506,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 286, y: 1030}
+  m_AnchoredPosition: {x: 357, y: 400}
   m_SizeDelta: {x: 80, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1506424711
@@ -2538,7 +2582,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 175.99994, y: 1028}
+  m_AnchoredPosition: {x: 247, y: 400}
   m_SizeDelta: {x: 80, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1520912946

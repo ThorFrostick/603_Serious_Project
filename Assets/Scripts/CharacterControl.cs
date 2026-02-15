@@ -41,6 +41,7 @@ public class CharacterControl : MonoBehaviour
         }
         else
         {
+            Debug.Log(screenWidth);
             rect.DOAnchorPosX(screenWidth / 3, 0.5f).SetRelative();
             index--;
         }
