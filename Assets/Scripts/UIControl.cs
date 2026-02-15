@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using Random = System.Random;
+
 
 public class UIControl : MonoBehaviour
 {
@@ -14,14 +16,28 @@ public class UIControl : MonoBehaviour
     public Transform line;
     public GameObject characterObj;
 
+    public List<GameData.DocumentData> DocPresets;
+
     private RectTransform _doc;
     private RectTransform _docB;
     private int _docIndex = 0;
+    private Random _random = new Random();
 
     private void Start()
     {
         _doc = docFront;
         _docB = docBehind;
+
+        SetDocData(_doc);
+        SetDocData(_docB);
+        
+    }
+
+    private void SetDocData(RectTransform rt)
+    {
+        int index = _random.Next(DocPresets.Count);
+        DocControl dc = rt.GetComponent<DocControl>();
+        dc.SetData(DocPresets[index]);
     }
 
     private RectTransform Swap()
@@ -30,6 +46,8 @@ public class UIControl : MonoBehaviour
         d.anchoredPosition = new Vector2(0, 0); 
         d.SetAsFirstSibling();
         d.gameObject.name = $"Document_{_docIndex.ToString()}";
+        SetDocData(d);
+        
         var obDoc = _doc;
         _doc = _docB;
         _docB = d;
