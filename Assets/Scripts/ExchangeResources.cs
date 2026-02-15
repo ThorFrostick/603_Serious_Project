@@ -109,30 +109,30 @@ public class ExchangeResources : MonoBehaviour
 
         //Now, we want to display the information in a readable format for the player.
         //We will go through each of the resources and show what nation will be giving resources.
-        text.text = "Request:\n";
-        if (nationAGivesOil)
-        {
-            text.text += $"Nation B requests {deltaOil.ToString("F2")} units of Oil from Nation A\n";
-        }
-        else
-        {
-            text.text += $"Nation A requests {deltaOil.ToString("F2")} units of Oil from Nation B\n";
-        }
-        if (nationAGivesLand)
-        {
-            text.text += $"Nation B requests {deltaLand.ToString("F2")} units of Land from Nation A\n";
-        }
-        else
-        {
-            text.text += $"Nation A requests {deltaLand.ToString("F2")} units of Land from Nation B\n";
-        }
-        if (nationAGivesCurrency)
-        {
-            text.text += $"Nation B requests {deltaCurrency.ToString("F2")} units of Capital from Nation A\n";
-        }
-        else
-        {
-            text.text += $"Nation A requests {deltaCurrency.ToString("F2")} units of Capital from Nation B\n";
-        }
+        //text.text = "Request:\n";
+        //if (nationAGivesOil)
+        //{
+        //    text.text += $"Nation B requests {deltaOil.ToString("F2")} units of Oil from Nation A\n";
+        //}
+        //else
+        //{
+        //    text.text += $"Nation A requests {deltaOil.ToString("F2")} units of Oil from Nation B\n";
+        //}
+        //if (nationAGivesLand)
+        //{
+        //    text.text += $"Nation B requests {deltaLand.ToString("F2")} units of Land from Nation A\n";
+        //}
+        //else
+        //{
+        //    text.text += $"Nation A requests {deltaLand.ToString("F2")} units of Land from Nation B\n";
+        //}
+        //if (nationAGivesCurrency)
+        //{
+        //    text.text += $"Nation B requests {deltaCurrency.ToString("F2")} units of Capital from Nation A\n";
+        //}
+        //else
+        //{
+        //    text.text += $"Nation A requests {deltaCurrency.ToString("F2")} units of Capital from Nation B\n";
+        //}
     }
 }
