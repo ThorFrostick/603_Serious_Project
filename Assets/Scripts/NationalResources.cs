@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class NationalResources : MonoBehaviour
@@ -43,5 +44,10 @@ public class NationalResources : MonoBehaviour
         oil += deltaOil;
         land += deltaLand;
         currency += deltaCurrency;
+
+        //Round all the resources to the second decimal place.
+        oil = (float)Math.Round((double)oil, 2, MidpointRounding.AwayFromZero);
+        land = (float)Math.Round((double)land, 2, MidpointRounding.AwayFromZero);
+        currency = (float)Math.Round((double)currency, 2, MidpointRounding.AwayFromZero);
     }
 }

@@ -18,8 +18,8 @@ public class EndGame : MonoBehaviour
     void Update()
     {
         //If any of the two nations' resources drop to 0 or below, give the player a Game Over.
-        if (nationA.Oil <= 0 || nationA.Land <= 0 || nationA.Currency <= 0 ||
-            nationB.Oil <= 0 || nationB.Land <= 0 || nationB.Currency <= 0)
+        if (nationA.Oil <= 0.1 || nationA.Land <= 0.1 || nationA.Currency <= 0.1 ||
+            nationB.Oil <= 0.1 || nationB.Land <= 0.1 || nationB.Currency <= 0.1)
         {
             SceneManager.LoadScene("GameOver_Test");
         }

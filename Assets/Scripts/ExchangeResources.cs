@@ -93,22 +93,10 @@ public class ExchangeResources : MonoBehaviour
         //Update Nation A's resources using the new base values for the change.
         nationA.GetComponent<NationalResources>().UpdateResources(deltaOil, deltaLand, deltaCurrency);
         Debug.Log($"Nation A => Oil: {nationA.GetComponent<NationalResources>().Oil}, Land: {nationA.GetComponent<NationalResources>().Land}, Capital: {nationA.GetComponent<NationalResources>().Currency}");
-        //// 0 = Nation A Oil
-        //resources.UpdateResource(0, -1 + nationA.GetComponent<NationalResources>().Oil);
-        //// 1 = Nation A Land
-        //resources.UpdateResource(1, -1 + nationA.GetComponent<NationalResources>().Land);
-        //// 2 = Nation A Currency
-        //resources.UpdateResource(2, -1 + nationA.GetComponent<NationalResources>().Currency);
 
         //Then, update Nation B's resources with the inverse of Nation A's change in resources.
         nationB.GetComponent<NationalResources>().UpdateResources(-deltaOil, -deltaLand, -deltaCurrency);
         Debug.Log($"Nation B => Oil: {nationB.GetComponent<NationalResources>().Oil}, Land: {nationB.GetComponent<NationalResources>().Land}, Capital: {nationB.GetComponent<NationalResources>().Currency}");
-        //// 3 = Nation B Oil
-        //resources.UpdateResource(3, -1 + nationB.GetComponent<NationalResources>().Oil);
-        //// 4 = Nation B Land
-        //resources.UpdateResource(4, -1 + nationB.GetComponent<NationalResources>().Land);
-        //// 5 = Nation B Currency
-        //resources.UpdateResource(5, -1 + nationB.GetComponent<NationalResources>().Currency);
     }
 
     /// <summary>
@@ -124,27 +112,27 @@ public class ExchangeResources : MonoBehaviour
         text.text = "Request:\n";
         if (nationAGivesOil)
         {
-            text.text += $"Nation B requests {deltaOil} units of Oil from Nation A\n";
+            text.text += $"Nation B requests {deltaOil.ToString("F2")} units of Oil from Nation A\n";
         }
         else
         {
-            text.text += $"Nation A requests {deltaOil} units of Oil from Nation B\n";
+            text.text += $"Nation A requests {deltaOil.ToString("F2")} units of Oil from Nation B\n";
         }
         if (nationAGivesLand)
         {
-            text.text += $"Nation B requests {deltaLand} units of Land from Nation A\n";
+            text.text += $"Nation B requests {deltaLand.ToString("F2")} units of Land from Nation A\n";
         }
         else
         {
-            text.text += $"Nation A requests {deltaLand} units of Land from Nation B\n";
+            text.text += $"Nation A requests {deltaLand.ToString("F2")} units of Land from Nation B\n";
         }
         if (nationAGivesCurrency)
         {
-            text.text += $"Nation B requests {deltaCurrency} units of Capital from Nation A\n";
+            text.text += $"Nation B requests {deltaCurrency.ToString("F2")} units of Capital from Nation A\n";
         }
         else
         {
-            text.text += $"Nation A requests {deltaCurrency} units of Capital from Nation B\n";
+            text.text += $"Nation A requests {deltaCurrency.ToString("F2")} units of Capital from Nation B\n";
         }
     }
 }
