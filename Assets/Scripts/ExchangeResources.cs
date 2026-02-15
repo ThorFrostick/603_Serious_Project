@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class ExchangeResources : MonoBehaviour
@@ -11,6 +12,9 @@ public class ExchangeResources : MonoBehaviour
 
     //We will use bools to determine if nation A will give or receive certain resources.
     private bool nationAGivesOil, nationAGivesLand, nationAGivesCurrency;
+
+    //Additionally, get the Bars that show the amount of resources each nation has.
+    private ResourceUpdateManager resources;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +32,26 @@ public class ExchangeResources : MonoBehaviour
         nationAGivesOil = CoinFlip();
         nationAGivesLand = CoinFlip();
         nationAGivesCurrency = CoinFlip();
+
+        //Get the resource manager for the two nations' resources.
+        resources = GameObject.FindFirstObjectByType<ResourceUpdateManager>();
+
+        //The resourceBars list is all of our resources for each nation.
+        // 0 = Nation A Oil
+        resources.UpdateResource(0, 0 - nationA.GetComponent<NationalResources>().Oil);
+        // 1 = Nation A Land
+        resources.UpdateResource(1, 0 - nationA.GetComponent<NationalResources>().Land);
+        // 2 = Nation A Currency
+        resources.UpdateResource(2, 0 - nationA.GetComponent<NationalResources>().Currency);
+        // 3 = Nation B Oil
+        resources.UpdateResource(3, 0 - nationB.GetComponent<NationalResources>().Oil);
+        // 4 = Nation B Land
+        resources.UpdateResource(4, 0 - nationB.GetComponent <NationalResources>().Land);
+        // 5 = Nation B Currency
+        resources.UpdateResource(5, 0 - nationB.GetComponent<NationalResources>().Currency);
+
+        //Display the information we have determined about this policy on screen
+        Display();
     }
 
     private bool CoinFlip()
@@ -69,5 +93,42 @@ public class ExchangeResources : MonoBehaviour
         //Then, update Nation B's resources with the inverse of Nation A's change in resources.
         nationB.GetComponent<NationalResources>().UpdateResources(-deltaOil, -deltaLand, -deltaCurrency);
         Debug.Log($"Nation B => Oil: {nationB.GetComponent<NationalResources>().Oil}, Land: {nationB.GetComponent<NationalResources>().Land}, Capital: {nationB.GetComponent<NationalResources>().Currency}");
+    }
+
+    /// <summary>
+    /// Display the information of the policy on screen, including who exchanegs what.
+    /// </summary>
+    private void Display()
+    {
+        //First, get the Text display of our policy.
+        TMP_Text text = gameObject.GetComponentInChildren<TMP_Text>();
+
+        //Now, we want to display the information in a readable format for the player.
+        //We will go through each of the resources and show what nation will be giving resources.
+        text.text = "Request:\n";
+        if (nationAGivesOil)
+        {
+            text.text += $"Nation B requests {deltaOil} units of Oil from Nation A\n";
+        }
+        else
+        {
+            text.text += $"Nation A requests {deltaOil} units of Oil from Nation B\n";
+        }
+        if (nationAGivesLand)
+        {
+            text.text += $"Nation B requests {deltaLand} units of Land from Nation A\n";
+        }
+        else
+        {
+            text.text += $"Nation A requests {deltaLand} units of Land from Nation B\n";
+        }
+        if (nationAGivesCurrency)
+        {
+            text.text += $"Nation B requests {deltaCurrency} units of Capital from Nation A\n";
+        }
+        else
+        {
+            text.text += $"Nation A requests {deltaCurrency} units of Capital from Nation B\n";
+        }
     }
 }
