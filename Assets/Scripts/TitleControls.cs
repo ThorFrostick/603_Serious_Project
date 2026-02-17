@@ -5,7 +5,7 @@ public class TitleControls : MonoBehaviour
 {
     public void OnStartClick() 
     {
-        SceneManager.LoadScene("AppDec");
+        SceneManager.LoadScene("UIIntegrate");
     }
 
     public void OnQuitClick() 

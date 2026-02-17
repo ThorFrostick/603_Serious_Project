@@ -24,6 +24,8 @@ public class UIControl : MonoBehaviour
     public Image LandBImg;
     public Image MoneyBImg;
 
+    private List<Image> resourceGauges = new List<Image>();
+
     public List<GameData.DocumentData> DocPresets;
 
     private RectTransform _doc;
@@ -51,6 +53,13 @@ public class UIControl : MonoBehaviour
         SetDocData(_doc);
         SetDocData(_docB);
 
+        resourceGauges.Add(OilAImg);
+        resourceGauges.Add(LandAImg);
+        resourceGauges.Add(MoneyAImg);
+        resourceGauges.Add(OilBImg);
+        resourceGauges.Add(LandBImg);
+        resourceGauges.Add(MoneyBImg);
+
         UpdateResourceUI();
     }
 
@@ -63,6 +72,14 @@ public class UIControl : MonoBehaviour
         OilBImg.fillAmount = _Oil_B / 100f;
         LandBImg.fillAmount = _Land_B / 100f;
         MoneyBImg.fillAmount = _Money_B / 100f;
+
+        foreach (Image resource in resourceGauges)
+        {
+            if (resource.fillAmount == 0f)
+            {
+                SceneManager.LoadScene("GameOverScreen");
+            }
+        }
     }
 
     private void SetDocData(RectTransform rt)
@@ -144,7 +161,7 @@ public class UIControl : MonoBehaviour
         cc.RemoveAt(0);
         var newChar = Instantiate(characterObj, line);
         var newRect = newChar.GetComponent<RectTransform>();
-        newRect.anchoredPosition = new Vector2(-1500, 0);
+        newRect.anchoredPosition = new Vector2(-1500, -110);
         var newCC = newChar.GetComponent<CharacterControl>();
         newCC.SetData();
         cc.Add(newCC);
@@ -161,7 +178,7 @@ public class UIControl : MonoBehaviour
         cc.RemoveAt(0);
         var newChar = Instantiate(characterObj, line);
         var newRect = newChar.GetComponent<RectTransform>();
-        newRect.anchoredPosition = new Vector2(-1500, 0);
+        newRect.anchoredPosition = new Vector2(-1500, -110);
         var newCC = newChar.GetComponent<CharacterControl>();
         newCC.SetData();
         cc.Add(newCC);
