@@ -1,17 +1,13 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TitleControls : MonoBehaviour
 {
-    [SerializeField]
-    public GameObject explainPanel;
-
+    public TextMeshProUGUI peaceDaysText;
+    
     public void OnStartClick() 
-    {
-        explainPanel.SetActive(true);
-    }
-
-    public void onAcceptClick() 
     {
         SceneManager.LoadScene("UIIntegrate");
     }
@@ -26,4 +22,12 @@ public class TitleControls : MonoBehaviour
         SceneManager.LoadScene("TitleScreen");
     }
 
+    private void Start()
+    {
+        if (peaceDaysText == null)
+        {
+            return;
+        }
+        peaceDaysText.text = $"Days Peace Has Been Kept For <color=#FF0000>{StaticGameData.peaceDays}</color> Days";
+    }
 }

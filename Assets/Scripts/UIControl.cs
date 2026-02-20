@@ -24,6 +24,8 @@ public class UIControl : MonoBehaviour
     public Image LandBImg;
     public Image MoneyBImg;
 
+    public Image HPFrame;
+
     private List<Image> resourceGauges = new List<Image>();
 
     public List<GameData.DocumentData> DocPresets;
@@ -35,23 +37,30 @@ public class UIControl : MonoBehaviour
 
     #region NationData
 
-    private float _Oil_A = 50;
-    private float _Land_A = 50;
+    private float _Oil_A = 80;
+    private float _Land_A = 30;
     private float _Money_A = 50;
     
-    private float _Oil_B = 50;
-    private float _Land_B = 50;
-    private float _Money_B = 50;
+    private float _Oil_B = 30;
+    private float _Land_B = 80;
+    private float _Money_B = 20;
 
     #endregion
 
+    private GameData.Nation _curNation;
+    private int _peaceDay = 0;
+    private int _Approves = 0;
+    private int _Declines = 0;
+
     private void Start()
     {
+        StaticGameData.peaceDays = 0;
+        
         _doc = docFront;
         _docB = docBehind;
 
         SetDocData(_doc);
-        SetDocData(_docB);
+        SetDocData(_docB, _curNation);
 
         resourceGauges.Add(OilAImg);
         resourceGauges.Add(LandAImg);
@@ -61,6 +70,11 @@ public class UIControl : MonoBehaviour
         resourceGauges.Add(MoneyBImg);
 
         UpdateResourceUI();
+    }
+
+    private void Update()
+    {
+        HPFrame.color = new Color(HPFrame.color.r, HPFrame.color.g, HPFrame.color.b, Mathf.Sin(Time.time * 3) / 2.0f + 0.5f);
     }
 
     private void UpdateResourceUI()
@@ -75,10 +89,16 @@ public class UIControl : MonoBehaviour
 
         foreach (Image resource in resourceGauges)
         {
-            if (resource.fillAmount == 0f)
+            if (resource.fillAmount <= 0f)
             {
+                StaticGameData.peaceDays = _peaceDay;
+                StaticGameData.Approves = _Approves;
+                StaticGameData.Declines = _Declines;
+                StaticGameData.CollectData();
                 SceneManager.LoadScene("GameOverScreen");
             }
+
+            HPFrame.gameObject.SetActive(resource.fillAmount <= 0.1f);
         }
     }
 
@@ -87,6 +107,24 @@ public class UIControl : MonoBehaviour
         int index = _random.Next(DocPresets.Count);
         DocControl dc = rt.GetComponent<DocControl>();
         dc.SetData(DocPresets[index]);
+        _curNation = DocPresets[index].Nation;
+    }
+    
+    private void SetDocData(RectTransform rt, GameData.Nation nation)
+    {
+        List<GameData.DocumentData> tempList = new List<GameData.DocumentData>();
+        foreach (var dd in DocPresets)
+        {
+            if (dd.Nation != nation)
+            {
+                tempList.Add(dd);
+            }
+        }
+        
+        int index = _random.Next(tempList.Count);
+        DocControl dc = rt.GetComponent<DocControl>();
+        dc.SetData(tempList[index]);
+        _curNation = tempList[index].Nation;
     }
 
     private RectTransform Swap(bool isApprove)
@@ -96,10 +134,10 @@ public class UIControl : MonoBehaviour
         UpdateResources(docData, isApprove);
         
         var d = Instantiate(_doc, table);
-        d.anchoredPosition = new Vector2(0, 0); 
+        d.anchoredPosition = new Vector2(0, -347); 
         d.SetAsFirstSibling();
         d.gameObject.name = $"Document_{_docIndex.ToString()}";
-        SetDocData(d);
+        SetDocData(d, _curNation);
         
         var obDoc = _doc;
         _doc = _docB;
@@ -165,6 +203,8 @@ public class UIControl : MonoBehaviour
         var newCC = newChar.GetComponent<CharacterControl>();
         newCC.SetData();
         cc.Add(newCC);
+        _peaceDay++;
+        _Approves++;
     }
 
     public void OnBtnDecline()
@@ -182,6 +222,8 @@ public class UIControl : MonoBehaviour
         var newCC = newChar.GetComponent<CharacterControl>();
         newCC.SetData();
         cc.Add(newCC);
+        _peaceDay++;
+        _Declines++;
     }
 
     public void OnTitleClick() 
