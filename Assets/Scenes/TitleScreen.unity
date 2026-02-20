@@ -435,7 +435,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 97ff9a8d380fbba40b14284bb913967f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a1a731532d02c364bb9c33cf2b1603b0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -687,7 +687,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 927705305}
         m_TargetAssemblyTypeName: TitleControls, Assembly-CSharp
-        m_MethodName: onAcceptClick
+        m_MethodName: OnAcceptClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1214,6 +1214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a6cc7dc7af4e3459d4f86fe552619a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  peaceDaysText: {fileID: 0}
   explainPanel: {fileID: 434935513}
 --- !u!1 &1047612372
 GameObject:

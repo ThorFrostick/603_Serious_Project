@@ -6,8 +6,14 @@ using UnityEngine.SceneManagement;
 public class TitleControls : MonoBehaviour
 {
     public TextMeshProUGUI peaceDaysText;
+    public GameObject explainPanel;
     
     public void OnStartClick() 
+    {
+        explainPanel.SetActive(true);
+    }
+
+    public void OnAcceptClick() 
     {
         SceneManager.LoadScene("UIIntegrate");
     }
