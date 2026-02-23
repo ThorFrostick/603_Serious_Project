@@ -6,9 +6,9 @@ public class GameData
 {
     public enum Nation
     {
-        NATION_A,
-        NATION_B,
-        OTHER
+        Vectera,
+        Bannutt,
+        Trudador
     }
 
     [System.Serializable]

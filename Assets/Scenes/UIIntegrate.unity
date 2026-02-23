@@ -159,7 +159,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -347}
-  m_SizeDelta: {x: 800, y: 600}
+  m_SizeDelta: {x: 900, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &224482118
 MonoBehaviour:
@@ -1617,8 +1617,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 400}
+  m_AnchoredPosition: {x: 5, y: 10}
+  m_SizeDelta: {x: 670, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &715206454
 MonoBehaviour:
@@ -1669,8 +1669,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2599,7 +2599,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -347}
-  m_SizeDelta: {x: 800, y: 600}
+  m_SizeDelta: {x: 900, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1127220591
 MonoBehaviour:
@@ -2878,66 +2878,274 @@ MonoBehaviour:
   MoneyBImg: {fileID: 1569588842}
   HPFrame: {fileID: 1815641165}
   DocPresets:
-  - DocText: A starving nation has nothing to lose. We ask for your aid not as beggars,
-      but as neighbors who share a delicate peace. Do not force us to choose between
-      our survival and your security.
+  - DocText: 'A pair of armed robbers attacked our capital city, demanding that Bannutt
+      be granted more <color=#005500>territory</color>. Although the pair were apprehended,
+      several hostages were harmed in the event. We demand that Bannutt <color=#8B8000>repay</color>
+      the victims''s medical and legal fees for the unjust treatment they endured
+      in Bannutt''s name. '
     Nation: 0
     ApproveEffectA:
+      Money: 25
+      Oil: 0
+      Land: 0
+    DeclineEffectA:
+      Money: -20
+      Oil: 0
+      Land: 0
+    ApproveEffectB:
+      Money: -20
+      Oil: 0
+      Land: 0
+    DeclineEffectB:
+      Money: 0
+      Oil: 0
+      Land: 0
+  - DocText: With Vectera's recent attacks on our country, we've lost much of our
+      plantation <color=#005500>fields</color> and maintenance tools. We propose
+      that Vectera provide back the <color=#005500>land</color> we rightfully own
+      as well as provide <color=#8B8000>monetary</color> compensation for cultivation
+      expenses and associated damages.
+    Nation: 1
+    ApproveEffectA:
+      Money: -20
+      Oil: 0
+      Land: -20
+    DeclineEffectA:
+      Money: 0
+      Oil: 0
+      Land: 0
+    ApproveEffectB:
+      Money: 15
+      Oil: 0
+      Land: 20
+    DeclineEffectB:
+      Money: -15
+      Oil: 0
+      Land: 0
+  - DocText: Bannutt scientists have determined a method for refining crude <color=purple>oil</color>.
+      As Vectera's <color=purple>oil</color> business currently faces decreasing
+      <color=#8B8000>revenue</color>, we would like to propose a deal between the
+      two nations, where this discovery is shared and implemented into Vectera's
+      businesses with Bannutt shareholders receiving a percentage of the <color=#8B8000>profits</color>.
+    Nation: 2
+    ApproveEffectA:
+      Money: -5
+      Oil: 15
+      Land: 0
+    DeclineEffectA:
+      Money: -15
+      Oil: -10
+      Land: 0
+    ApproveEffectB:
+      Money: 15
+      Oil: 0
+      Land: 0
+    DeclineEffectB:
+      Money: 5
+      Oil: 10
+      Land: 0
+  - DocText: Our military officers are petitioning for the construction of a base
+      in Bannutt territory. In exchange for occupying the location, we shall <color=#8B8000>pay</color>
+      for many of the expenses, and offer to host joint training operations between
+      the two nations' recruit classes, cutting down <color=#8B8000>costs</color>
+      for the Bannutt military.
+    Nation: 0
+    ApproveEffectA:
+      Money: -10
+      Oil: 0
+      Land: 10
+    DeclineEffectA:
+      Money: -5
+      Oil: 0
+      Land: 0
+    ApproveEffectB:
+      Money: 15
+      Oil: 0
+      Land: -10
+    DeclineEffectB:
+      Money: 0
+      Oil: 0
+      Land: 0
+  - DocText: Our <color=purple>oil</color> supply is projected to run out in 2 months'
+      time thanks to Vectera's encroachment. Without <color=purple>oil</color>, we
+      cannot provide fuel for our machines to provide for our nation in a timely
+      manner. We offer to make a single <color=#8B8000>payment</color> to Vectera
+      for our <color=purple>oil</color> under the proclaimation that they see us
+      no longer as a "customer" for their business.
+    Nation: 1
+    ApproveEffectA:
+      Money: 20
+      Oil: -25
+      Land: 0
+    DeclineEffectA:
+      Money: 10
+      Oil: 15
+      Land: 0
+    ApproveEffectB:
+      Money: -20
+      Oil: 25
+      Land: 0
+    DeclineEffectB:
+      Money: 0
+      Oil: -20
+      Land: 0
+  - DocText: As Bannutt has announced new <color=#8B8000>tariffs</color> on Vecteran
+      goods following an increase in domestic <color=#005500>food supplies</color>,
+      we would like to invite the presidents of both nations to a conference in Trudador's
+      borders to find a more reasonable option for both nations.
+    Nation: 2
+    ApproveEffectA:
+      Money: -5
+      Oil: 0
+      Land: 5
+    DeclineEffectA:
+      Money: -10
+      Oil: 0
+      Land: 0
+    ApproveEffectB:
+      Money: -10
+      Oil: 0
+      Land: -5
+    DeclineEffectB:
+      Money: 5
+      Oil: 0
+      Land: 5
+  - DocText: We've lost countless lives thanks to Vectera's reliance on our resources.
+      The damage they've brought means we've been unable to provide for ourselves
+      nor meet the unreasonable demands of the Vectera troops that terrorize our
+      nation. By providing Bannutt a cut of the <color=#8B8000>money</color> made
+      from our stolen assets, Vectera will begin to repay what we are rightfully
+      owed.
+    Nation: 1
+    ApproveEffectA:
+      Money: -25
+      Oil: 0
+      Land: 0
+    DeclineEffectA:
+      Money: 15
+      Oil: 0
+      Land: 0
+    ApproveEffectB:
+      Money: 25
+      Oil: 0
+      Land: 0
+    DeclineEffectB:
+      Money: -10
+      Oil: 0
+      Land: 0
+  - DocText: A boom in oil export <color=#8B8000>revenue</color> has resulted in
+      a significant increase in Vecteran birth rates, projected to cause shortages
+      in <color=#005500>food and housing</color>. We would like to propose a <color=#8B8000>purchase</color>
+      of 10,000 acres of <color=#005500>land</color> from Bannutt as part of a large-scale
+      business deal that will give Bannutt increased <color=purple>oil</color> from
+      Vectera at a <color=#8B8000>lower price</color> per barrel.
+    Nation: 0
+    ApproveEffectA:
+      Money: -20
+      Oil: -10
+      Land: 20
+    DeclineEffectA:
+      Money: 10
+      Oil: 5
+      Land: -10
+    ApproveEffectB:
       Money: 30
-      Oil: -15
+      Oil: 10
+      Land: -10
+    DeclineEffectB:
+      Money: -5
+      Oil: 5
+      Land: 0
+  - DocText: Our <color=purple>oil</color> supply relies on contrubtions from neighboring
+      nations. Bannutt, however, have started to become stubborn with sharing their
+      <color=purple>oil</color>. Without their contributions, we would have to resort
+      to <color=#8B8000>price hikes</color> on our products. It's best for everyone
+      that Bannutt lower their restrictions on <color=purple>oil</color> for future
+      prosperity.
+    Nation: 0
+    ApproveEffectA:
+      Money: 5
+      Oil: 25
       Land: 0
     DeclineEffectA:
       Money: -10
-      Oil: 10
+      Oil: -20
       Land: 0
     ApproveEffectB:
-      Money: -30
+      Money: 0
+      Oil: -20
+      Land: 0
+    DeclineEffectB:
+      Money: 0
+      Oil: 15
+      Land: 0
+  - DocText: Our economists have projected a shortage in <color=purple>oil supplies</color>
+      for the next year, and are urging for an increase in imports from Vectera.
+      However, this would require an increase in the number of employees, and <color=#8B8000>wages</color>,
+      working at our shipyards. We propose that Vectera supplies a workforce of 1000
+      workers to assist in running our shipyards for their <color=purple>imports</color>.
+    Nation: 1
+    ApproveEffectA:
+      Money: 5
+      Oil: -10
+      Land: 0
+    DeclineEffectA:
+      Money: 10
+      Oil: -5
+      Land: 0
+    ApproveEffectB:
+      Money: -15
       Oil: 15
       Land: 0
     DeclineEffectB:
-      Money: 10
-      Oil: -10
+      Money: 5
+      Oil: -15
       Land: 0
-  - DocText: 'Our fields have withered, yet our oil reserves remain vast. We propose
-      a fair exchange: your surplus grain for our black gold. Let us ensure neither
-      of our nations suffers in vain.'
-    Nation: 1
-    ApproveEffectA:
-      Money: -10
-      Oil: 20
-      Land: -15
-    DeclineEffectA:
-      Money: 0
-      Oil: -10
-      Land: 5
-    ApproveEffectB:
-      Money: 10
-      Oil: -20
-      Land: 15
-    DeclineEffectB:
-      Money: -10
-      Oil: 5
-      Land: -10
-  - DocText: The Star-Gazer has arrived. For the prosperity of the state and the
-      peace of the people, he is now under the joint employ of our two crowns. May
-      his visions bring us light.
+  - DocText: Vectera has asked for a <color=#8B8000>stipend</color> to fund their
+      newest labor practices as a means to make more from the <color=purple>oil</color>
+      collected from neighboring nations. If we accept, they will use the <color=#8B8000>money</color>
+      to provide for their nation and rely less on the <color=purple>oil</color>
+      and <color=#005500>land</color> of their neighbors. Bannutt considers them
+      greedy, so this may ease the tension between the nations.
     Nation: 2
     ApproveEffectA:
-      Money: 5
-      Oil: 20
-      Land: 10
+      Money: 25
+      Oil: 30
+      Land: -5
     DeclineEffectA:
-      Money: -15
-      Oil: -10
-      Land: -15
+      Money: -10
+      Oil: -15
+      Land: 0
     ApproveEffectB:
-      Money: 20
+      Money: 0
       Oil: 5
-      Land: 10
+      Land: 5
     DeclineEffectB:
-      Money: -15
-      Oil: -10
-      Land: -15
+      Money: 0
+      Oil: 10
+      Land: -5
+  - DocText: Bannutt has issued a request asking for more resource insurance as they
+      claim Vectera has been "feeding off of them more now than ever". If we are
+      to accept, Bannutt will be provided a cut of our <color=#005500>free land</color>
+      and its <color=#8B8000>wealth</color> to continue their practices. However,
+      this act may be considered by other nations as us playing favorites.
+    Nation: 2
+    ApproveEffectA:
+      Money: -5
+      Oil: 0
+      Land: -5
+    DeclineEffectA:
+      Money: 0
+      Oil: 0
+      Land: 10
+    ApproveEffectB:
+      Money: 30
+      Oil: 0
+      Land: 25
+    DeclineEffectB:
+      Money: -5
+      Oil: 0
+      Land: -10
 --- !u!114 &1223616500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3622,8 +3830,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 400}
+  m_AnchoredPosition: {x: 5, y: 10}
+  m_SizeDelta: {x: 670, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1619003768
 MonoBehaviour:
@@ -3674,8 +3882,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -14,14 +14,8 @@ public class DocControl : MonoBehaviour
         string doc = docData.DocText;
         GameData.Nation nation = docData.Nation;
         string reqNation = "";
-        if (nation == GameData.Nation.OTHER)
-        {
-            reqNation = "Event!";
-        }
-        else
-        {
-            reqNation = $"Request From {nation}";
-        }
+
+       reqNation = $"Request From {nation}";
 
         docTxt = $"{reqNation}\n{doc}";
 

@@ -98,7 +98,7 @@ public class UIControl : MonoBehaviour
                 SceneManager.LoadScene("GameOverScreen");
             }
 
-            HPFrame.gameObject.SetActive(resource.fillAmount <= 0.1f);
+            HPFrame.gameObject.SetActive(resource.fillAmount <= 0.15f);
         }
     }
 

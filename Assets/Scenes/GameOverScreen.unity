@@ -204,7 +204,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 244039295}
         m_TargetAssemblyTypeName: TitleControls, Assembly-CSharp
-        m_MethodName: OnAcceptClick
+        m_MethodName: OnBeginClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -422,6 +422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   peaceDaysText: {fileID: 290741492}
   explainPanel: {fileID: 0}
+  onboardPanel: {fileID: 0}
 --- !u!114 &244039296
 MonoBehaviour:
   m_ObjectHideFlags: 0

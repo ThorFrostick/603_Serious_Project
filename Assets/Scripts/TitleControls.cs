@@ -7,6 +7,7 @@ public class TitleControls : MonoBehaviour
 {
     public TextMeshProUGUI peaceDaysText;
     public GameObject explainPanel;
+    public GameObject onboardPanel;
     
     public void OnStartClick() 
     {
@@ -14,6 +15,11 @@ public class TitleControls : MonoBehaviour
     }
 
     public void OnAcceptClick() 
+    {
+        onboardPanel.SetActive(true);
+    }
+
+    public void OnBeginClick() 
     {
         SceneManager.LoadScene("UIIntegrate");
     }
@@ -34,6 +40,6 @@ public class TitleControls : MonoBehaviour
         {
             return;
         }
-        peaceDaysText.text = $"Days Peace Has Been Kept For <color=#FF0000>{StaticGameData.peaceDays}</color> Days";
+        peaceDaysText.text = $"Peace Has Been Kept For <color=#FF0000>{StaticGameData.peaceDays}</color> Days";
     }
 }
