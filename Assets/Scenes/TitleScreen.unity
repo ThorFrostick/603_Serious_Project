@@ -178,14 +178,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'You''ll receive requests from Vectera, Bannutt, and other Trudador authorities
     over how resources should be distrubuted. Read the request carefully and decide
-    whether to approve or decline it. The results of your decision will be taken
-    into effect over the day.
+    whether to approve or decline it by either clicking the box or dragging the document
+    over the box. The results of your decision will be taken into effect over the
+    day.
 
 
-    We want Vectera and Bannutt to share an equal
-    amount of resources between them. If any resource of either nation runs low,
-    then war will likely break out. We don''t know how long we can maintain peace,
-    but we hope it will last a long time.'
+    We want Vectera and Bannutt to share an equal amount of resources
+    between them. If any resource of either nation runs low, then war will likely
+    break out. We don''t know how long we can maintain peace, but we hope it will
+    last a long time.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e9e438dfaff6744a82b6866350dc8dd, type: 2}
   m_sharedMaterial: {fileID: 2239569577858958713, guid: 6e9e438dfaff6744a82b6866350dc8dd, type: 2}
@@ -281,7 +282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &236159865
 RectTransform:
   m_ObjectHideFlags: 0
